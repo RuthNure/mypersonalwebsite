@@ -1,0 +1,337 @@
+/* General Styles */
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 18px;
+  color: black;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  animation: fadeIn ease-in-out 2s forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Header Styles */
+.header-container {
+  font-size: 20px;
+  text-align: center;
+  padding-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header-item:nth-of-type(1),
+.header-item:nth-of-type(2) {
+  text-align: center;
+  width: 100%;
+}
+
+.header-img {
+  display: block;
+  margin: 0 auto;
+  border: 2px solid #333;
+  padding: 10px;
+  text-align: center;
+  width: 200px;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column; 
+  }
+
+  .header-item:nth-of-type(1),
+  .header-item:nth-of-type(2) {
+    width: 100%; 
+  }
+
+  .header-img {
+    width: 80%;
+  }
+}
+
+/* Navbar Styles */
+.navbar ul {
+  list-style-type: square;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #333;
+  color: black;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.navbar li {
+  display: inline;
+  margin: 0 10px;
+}
+
+.navbar li a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  text-align: center; 
+  padding: 10px 15px;
+}
+
+.navbar li a:hover {
+  background-color: whitesmoke !important;
+  color: #000;
+}
+
+/* Search Styles */
+.search-container {
+  display: inline-block;
+  margin-right: auto;
+  margin-left: 20px;
+}
+
+#search {
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  color: black;
+}
+
+#search-button {
+  background-color: rosybrown;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+#search-button:hover {
+  background-color: whitesmoke !important;
+  color: black;
+}
+
+/* Button Container Styles */
+.button-container {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.button-container button {
+  display: inline-block;
+  background-color: rosybrown;
+  color: black;
+  font-size: 16px;
+  text-align: center;
+  padding: 15px 32px;
+  cursor: pointer;
+  border: none;
+  margin: 0 10px;
+}
+
+.button-container button#theme-button {
+  margin-right: 5px;
+}
+
+.button-container button#reduce-motion-button {
+  margin-left: 5px;
+}
+/* Browse Button Styles */
+.browse-button {
+  display: inline-block;
+  background-color: rosybrown;
+  color: black;
+  font-size: 16px;
+  text-align: center;
+  padding: 15px 32px;
+  cursor: pointer;
+  border: none;
+  margin: 0 10px;
+}
+
+/* Image Container Styles */
+.img-container {
+  text-align: center;
+}
+
+.img-container img {
+  display: inline-block;
+}
+
+/* Custom Segment Styles */
+.custom-segment {
+  background-color: #faf0e6;
+}
+
+/* Videos Container Styles */
+.videos-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+}
+
+.videos-container h2,
+.videos-container h3,
+.videos-container iframe,
+.videos-container button {
+  margin: 10px;
+}
+
+.videos-container .browse-button {
+  display: inline-block;
+  background-color: rosybrown;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  padding: 15px 32px;
+  cursor: pointer;
+  border: none;
+}
+
+/* Heading Styles */
+h2, h3 {
+  text-align: center;
+}
+
+h3 {
+  font-style: italic;
+}
+
+/* Link Styles */
+a {
+  color: yellow;
+}
+
+a:visited {
+  color: blue;
+}
+
+a:hover {
+  color: red;
+}
+
+a:active {
+  color: green;
+}
+
+/* Footer Styles */
+footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: grey; 
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-size: 18px;
+  font-family: Arial, sans-serif;
+}
+
+footer a:hover {
+  text-decoration: underline; 
+}
+
+/* Error Styles */
+.error {
+  border-style: solid;
+  border-width: 2px;
+  border-color: red;
+  background: pink;
+}
+
+/* Petition Section Styles */
+.petition-section {
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+}
+
+#petition-form {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+}
+
+#petition-form label {
+  margin-bottom: 5px;
+}
+
+#petition-form input {
+  padding: 8px;
+  margin-bottom: 15px;
+}
+
+#petition-form button {
+  padding: 10px;
+  background-color: rosybrown;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#petition-form button:hover {
+  background-color: black;
+}
+
+.petition-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  width: 100%;
+  padding-bottom: 50px;
+}
+
+.petition-para {
+  width: 55%;
+  padding-right: 10px;
+}
+
+.signatures {
+  width: 45%;
+  padding-right: 10px;
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+  background: #232323;
+  color: #ffdeea;
+}
+
+/* CSS rule for revealable class */
+.revealable {
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: all 2s ease;
+}
+
+/* CSS rule for active class */
+.revealable.active {
+  position: relative;
+  transform: translateY(0);
+  opacity:

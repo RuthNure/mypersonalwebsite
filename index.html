@@ -1,0 +1,352 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>M.O.M</title>
+    <link rel="icon" href="imgs/sticker.webp">
+    <link href="reset.css" rel="stylesheet" type="text/css">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="reset-webview.css" rel="stylesheet" type="text/css">
+
+    <style>
+      .button-container {
+        text-align: center;
+      }
+      .dark-mode {
+        background: #232323;
+        color: #ffdeea;
+      }
+      .navbar ul {
+        list-style-type: none;
+        overflow: hidden;
+        position: relative;
+        top: 0;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: rosybrown;
+        color: #fff;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 15px;
+        font-weight: bold;
+        text-decoration: none;
+      }
+
+      .navbar ul li {
+        float: left;
+        margin: 0 10px;
+      }
+
+      .navbar ul li:last-child {
+        margin-left: auto;
+      }
+
+      .navbar li a {
+        display: block;
+        text-decoration: none;
+        color: #fff;
+        text-align: center;
+        padding: 10px 15px;
+      }
+
+      .navbar li a:hover {
+        background-color: #90eadf;
+        color: #000;
+      }
+
+      #search {
+        padding: 5px;
+        border: 1px solid #333;
+        border-radius: 5px;
+      }
+
+      #search-button {
+        background-color: rosybrown;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+
+      #search-button:hover {
+        background-color: #90eadf;
+      }
+
+      .petition-section {
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #f7f7f7;
+        text-align: center;
+        border-radius: 8px;
+      }
+
+      #petition-form {
+        margin-top: 15px;
+        display: flex;
+        flex-direction: column;
+        max-width: 300px;
+      }
+
+      #petition-form label {
+        margin-bottom: 5px;
+      }
+
+      #petition-form input {
+        padding: 8px;
+        margin-bottom: 15px;
+      }
+
+      #petition-form button {
+        padding: 10px;
+        background-color: rosybrown;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+
+      #petition-form button:hover {
+        background-color: black;
+      }
+
+      .petition-container {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        width: 100%;
+        padding-bottom: 50px;
+      }
+
+      .petition-para {
+        width: 55%;
+        padding-right: 10px;
+      }
+
+      .signatures {
+        width: 45%;
+        padding-right: 10px;
+      }
+
+      .error {
+        border-style: solid;
+        border-width: 2px;
+        border-color: red;
+        background: pink;
+      }
+
+      .call-to-action {
+        width: 50%;
+        float: left;
+      }
+
+      #signatures {
+        width: 50%;
+        float: right;
+      }
+
+      body {
+        height: 100%;
+        margin: 0;
+      }
+
+      body {
+        background-color: mintcream;
+        font-family: Georgia, 'Times New Roman', Times, serif, sans-serif;
+        opacity: 0;
+        animation: fadeIn ease-in-out 2s forwards;
+      }
+
+      .header-container {
+        position: relative;
+        min-height: 100%;
+      }
+
+      .header-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.5; 
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#our-community">Talk to a Mom</a></li>
+        <li><a href="#how-to-videos">Make a Video</a></li>
+        <li><a href="https://doctor.webmd.com/">Chat with a doctor</a></li>
+        <li><a href="#">Donate</a></li>
+        <li><a href="#">Reviews</a></li>
+        <li>
+          <button id="theme-button">Toggle Dark Mode</button>
+          <button id="reduce-motion-button">Reduce Motion</button>
+        </li>
+        <li style="text-align: left;" class="search-container">
+          <input type="text" id="contact" name="contact" required>
+          <button type="button" id="search-button">Go</button>
+        </li>
+      </ul>
+    </div>
+
+    <div id="home" class="header-container">
+      <video class="header-video" autoplay muted loop>
+        <source src="https://media.istockphoto.com/id/1156727778/video/were-from-these-streets.mp4?s=mp4-640x640-is&k=20&c=6-jOxjnXklEid293ih4jdYniW92s2snI8lbo2kiRa50=" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <img class="header-img" src="imgs/mom.jfif" alt="mom and child" width="200" height="200">
+      <h1>M.O.M</h1>
+      <h2>Member Only Moms</h2>
+      <h3>M.O.M provides you with the community of moms around the world that are going through similar struggles. Let us be each other’s anchor through life's toughest but most rewarding journey.</h3>
+    </div>
+
+    <div style="text-align: center;" class="button-container">
+      <button class="header-button" type="button">About us</button>
+      <button class="header-button" type="button">Become a M.O.M</button>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <br>
+    <h2>About Baby Blues</h2>
+    <p>
+      Many of us feel the excitement and joy of having a newborn baby. Regardless of the sleepless nights and dirty diapers, we are ready for it all. However, it can also bring something we would never expect - depression. Postpartum depression is a challenging and often overwhelming experience that some new mothers can go through after giving birth. It goes beyond the typical mood swings and exhaustion that accompany motherhood, as it involves persistent feelings of sadness, hopelessness, and emptiness that can linger for weeks or even months. This condition can manifest as extreme fatigue, irritability, and a sense of disconnection from the newborn. Many women with PPD experience guilt, self-blame, and a loss of interest in activities they once enjoyed. It can also affect physical health, leading to changes in appetite and sleep patterns. However, it's important to know that PPD is treatable, and seeking help from a healthcare provider, therapy, or support groups can make a significant difference in the journey to recovery, ultimately benefiting both the mother and the baby.
+    </p>
+    <h3>Postpartum depression affects 50-75% of new mothers.</h3>
+    <div class="img-container">
+      <img src="imgs/postpartum-depression-275px.jpg" alt="Postpartum Depression Image">
+    </div>
+    <br>
+
+    <section class="petition-section">
+      <div class="petition-container">
+        <div style="text-align: center;""petition-para">
+          <h2>Support a MOM: Sign Our Petition 💪</h2>
+          <p>Supporting PostpartumDepression.org is a compassionate and impactful way to champion the cause of mental health awareness for new mothers. This organization plays a crucial role in providing information, resources, and support for women and families navigating the challenges of Postpartum Depression (PPD). By contributing to PostpartumDepression.org, you are helping to facilitate access to vital knowledge and assistance, creating a supportive community, and promoting a greater understanding of PPD. Your support directly aids in raising awareness, reducing stigma, and improving the lives of those affected by this often misunderstood condition. Through your generosity, you become an advocate for the mental well-being of mothers, ensuring they receive the necessary help and guidance to embark on a path towards recovery, resilience, and a brighter postpartum journey.</p>
+          <form id="petition-form" style="text-align: center;">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="institute">Hometown:</label>
+            <input type="text" id="hometown" name="hometown" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <button id="sign-now-button" type="button">Sign Petition</button>
+          </form>
+        </div>
+        <div class="signatures">
+          <!-- Signature display goes here -->
+        </div>
+      </div>
+      <p id="total-counter">Total Signatures: 5</p>
+    </section>
+
+    <div id="thanks-modal" class="modal">
+      <div class="modal-content">
+        <p id="thanks-modal-content">See you back soon and Spread the word!</p>
+      </div>
+      <span class="close-button" onclick="closeModal()">&times;</span>
+      <h2>We appreciate your support!</h2>
+      <img id="modal-image" src="https://th.bing.com/th/id/R.0b9baceafe9400216e5f71dfd878b390?rik=jC4PAyRMRfzyBw&riu=http%3a%2f%2fpayload535.cargocollective.com%2f1%2f17%2f569900%2f13012841%2fThanks-gif.gif&ehk=uuvV3Ch22UrMy4lmhFAhcfnCJ5BTFW5HTPKHmMnJFg0%3d&risl=&pid=ImgRaw&r=0" alt="Thank You Animated GIF">
+    </div>
+
+    <br>
+    <br>
+    <div class="button-container">
+      <button type="button">Learn more about PPD</button>
+      <button type="button">Get help now!</button>
+    </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div id="our-community" style="text-align: center; background-image: url('imgs/img2.png'); height: 450px; position: relative; background-size: cover;">
+      <div style="position: relative;">
+        <h2 style="background-color: rgba(255, 255, 255, 1); padding: 5px; width: 250px; margin: 0 auto; text-align: center;">OUR COMMUNITY</h2>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h3 style="background-color: rgba(255, 255, 255, 1); padding: 5px; width: 500px; margin: 0 auto; text-align: center;">There is a place for every mom. Whether you are planning on being a mom, soon to be mom, or mom of five, welcome to this community of beautiful women exploring the world of motherhood.</h3>
+        <br>
+        <br>
+        <button type="button" class="header-button browse-button">Join the Community</button>
+      </div>
+    </div>
+
+    <div id="how to videos..." style=" background: radial-gradient(circle, #FFF5E1, #FFEDD1, #FFE0B2, #FFDAB7); background-size: cover; height: 480px;">  
+      <h2>How to videos...</h2>
+      <h3>Expert at swaddling a newborn or know how to best burp your newborn? Share your wisdom through a video tutorial to help your fellow moms!</h3>
+      <div class="videos-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/ioISOf-EDpc?si=LRUW9N3SB4KI7Mya" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/m50PTFmmlxw?si=1sRFqDxYKvVdvOo_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/EqrQIKRZa4w?si=6jO7ECu204H5Jop0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <button type="button" class="header-button browse-button">Browse more videos</button>
+      </div>
+    </div>
+
+    
+<div id="how to videos..."  style=" background:  radial-gradient(circle, #FFF5E1, #FFEDD1, #FFE0B2, #FFDAB7); background-size: cover; height: 480px;">  
+    <h2>How to videos...</h2>
+    <h3>Expert at swaddling a new born or know how to best burb your newborn?Share your wisodm through a video tutorial
+      to help your fellow moms!</h3>
+  <div class="videos-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/ioISOf-EDpc?si=LRUW9N3SB4KI7Mya" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/m50PTFmmlxw?si=1sRFqDxYKvVdvOo_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/EqrQIKRZa4w?si=6jO7ECu204H5Jop0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <button type="button" class="header-button browse-button">Browse more videos</button>
+  </div>
+</div>
+
+  
+  <h2>New research on PPD</h2>
+  <a class="" href="https://www.nimh.nih.gov/news/science-news/2023/population-study-finds-depression-is-different-before-during-and-after-pregnancy#:~:text=This%20study%E2%80%99s%20findings%20support%20the%20idea%20that%20pregnancy,of%20pregnancy%20and%20the%20first%205%20months%20postpartum.">
+    <article>
+      <h3>Population Study Finds Depression Is Different Before, During, and After Pregnancy</h3>
+      <p>The research points to a change in depressive episodes from pregnancy to after birth, specifically in thesecond trimester of pregnancy and the first 5 months postpartum.</p>
+    </article>
+  </a>
+  <a class="" href="https://www.npr.org/2020/10/27/928120949/research-indicates-postpartum-depression-can-last-for-3-years">
+    <article>
+      <h3>Postpartum Depression Can Last For 3 Years</h3>
+      <p>A new study finds that depression can linger for three years after childbirth, and in some cases get worse overtime.</p>
+    </article>
+  </a>
+  <a class="" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6492376/">
+    <article>
+      <h3>Consequences of maternal postpartum depression</h3>
+      <p>The consequences of postpartum period is both on the mother and child.</p>
+    </article>
+  </a>
+
+
+<footer>
+    <div class="footer-a">
+    <a href="https://www.bing.com/search?pglt=41&q=ruth+nure&cvid=91c496eb90e04b7296ab6e6882f44c4c&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIECAEQADIECAIQADIECAMQADIECAQQADIGCAUQRRg8MgYIBhBFGD0yBggHEEUYPNIBCDE1MjlqMGoxqAIAsAIA&FORM=ANNTA1&PC=U531">Our Creator</a>
+      <br>
+    <a href="mailto:ruthnure61@gmail.com">Contact US</a>
+      <br>
+  &copy; 2023 HZ Family Group. All rights reserved.
+    </div>
+</footer>
+
+    <script src="index.js"></script>
+  </body>
+
+</html>
+
+
+  
